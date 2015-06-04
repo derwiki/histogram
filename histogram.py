@@ -31,5 +31,9 @@ if __name__ == '__main__':
         bin_count = bins[timing_key]
         width = int(bin_count / max_bar * MAX_BAR_WIDTH)
         bucket_range = "{}-{}".format(i * BIN_DIVISOR, (i+1) * BIN_DIVISOR - 1)
-        print "{}\t{}\t{}".format(bucket_range, bin_count, '=' * width)
+        print ''.join((
+          str(bucket_range).ljust(15),
+          str(bin_count).ljust(5),
+          '=' * width
+        ))
 
